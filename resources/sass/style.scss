@@ -1,16 +1,45 @@
 // Add custom font
-@import url(http://fonts.googleapis.com/css?family=Raleway:400,700,300);
-$font-family-base: 'Raleway', sans-serif;
-
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto:300,400,500,700);
+$dash-fontfamily-normal: 'Roboto',
+Arial,
+sans-serif;
+$dash-fontfamily-condensed: 'Roboto Condensed',
+Arial,
+sans-serif;
+$font-family-base: $dash-fontfamily-normal;
+// sans-serif;
 // Import bootstrap and fontawesome
 @import "bootstrap";
 @import "font-awesome";
-
+@import "colors";
 // Bootstrap Starter Template Styles
 body {
-  padding-top: 50px;
-}
-.starter-template {
-  padding: 40px 15px;
-  text-align: center;
+    .vcenterContainer {
+        position: relative;
+        .vcenter {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    background-color: $dash-main-background;
+    header {
+        background-color: $dash-header-background;
+        color: $dash-header-primary;
+        padding-top: 2em;
+        padding-bottom: 2em;
+        img {
+            display: inline-block;
+            border: 2px solid $dash-header-imgBorder;
+            -webkit-border-radius: 0.2em;
+            -moz-border-radius: 0.2em;
+            border-radius: 0.2em;
+            width: 47%;
+            margin-left: 0.5%;
+            margin-right: 0.5%;
+        }
+        h2 {
+            font-weight: 300;
+        }
+    }
 }
