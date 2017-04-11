@@ -1,12 +1,16 @@
 var gulp = require('gulp'),
-    sass = require('gulp-ruby-sass')
-notify = require("gulp-notify")
-bower = require('gulp-bower');
+    sass = require('gulp-ruby-sass'),
+    notify = require("gulp-notify"),
+    bower = require('gulp-bower');
 var gsass = require('gulp-sass');
+var browserSync = require('browser-sync').create();
+var reload = browserSync.reload;
 
 var config = {
     sassPath: './resources/sass',
-    bowerDir: './bower_components'
+    bowerDir: './bower_components',
+    css: './public/css',
+    html: './public/*.html'
 }
 gulp.task('bower', function() {
     return bower()
@@ -51,4 +55,16 @@ gulp.task('sass', function() {
 gulp.task('watch', function() {
     gulp.watch(config.sassPath + '/**/*.scss', ['sass']);
 });
+
+gulp.task('serve', ['sass'], function() {
+
+    browserSync.init({
+        server: "./public"
+    });
+
+    gulp.watch(config.sassPath + '/**/*.scss', ['sass']);
+    gulp.watch(config.html).on('change', reload);
+    gulp.watch(config.css).on('change', reload);
+});
+
 gulp.task('default', ['bower', 'icons', 'css']);

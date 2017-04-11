@@ -9,37 +9,113 @@ sans-serif;
 $font-family-base: $dash-fontfamily-normal;
 // sans-serif;
 // Import bootstrap and fontawesome
+@import "colors";
+@import "bootover";
 @import "bootstrap";
 @import "font-awesome";
-@import "colors";
+//Override
+.panel {
+    box-shadow: 0 0px 0px transparent;
+}
+
 // Bootstrap Starter Template Styles
 body {
     .vcenterContainer {
-        position: relative;
+        display: flex;
+        flex-direction: row;
         .vcenter {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
+    .row-flex,
+    .row-flex>div[class*='col-'] {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex: 1 1 auto;
+    }
+    .row-flex-wrap {
+        -webkit-flex-flow: row wrap;
+        align-content: flex-start;
+        flex: 0;
+    }
+    .row-flex>div[class*='col-'],
+    .container-flex>div[class*='col-'] {
+        margin: -.2px;
+        /* hack adjust for wrapping */
+    }
+    .container-flex>div[class*='col-'] div,
+    .row-flex>div[class*='col-'] div {
+        width: 100%;
+    }
+    .flex-col {
+        display: flex;
+        display: -webkit-flex;
+        flex: 1 100%;
+        flex-flow: column nowrap;
+    }
+    .flex-grow {
+        display: flex;
+        -webkit-flex: 2;
+        flex: 2;
+    }
     background-color: $dash-main-background;
+    i {
+        position: relative;
+        span {
+            position: absolute;
+            top: -35%;
+            right: -35%;
+            background-color: $dash-header-secondary;
+            font-size: 0.5em;
+            padding: 0.35em 0.35em;
+            font-style: normal;
+            font-weight: bold;
+            width: 1.8em;
+            height: 1.8em;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            text-align: center;
+        }
+    }
     header {
         background-color: $dash-header-background;
         color: $dash-header-primary;
-        padding-top: 2em;
-        padding-bottom: 2em;
-        img {
-            display: inline-block;
-            border: 2px solid $dash-header-imgBorder;
-            -webkit-border-radius: 0.2em;
-            -moz-border-radius: 0.2em;
-            border-radius: 0.2em;
-            width: 47%;
-            margin-left: 0.5%;
-            margin-right: 0.5%;
+        padding-top: 0;
+        padding-bottom: 0;
+        .header-right {
+            padding-top: 2em;
+            padding-bottom: 2em;
         }
-        h2 {
-            font-weight: 300;
+        .header-left {
+            padding-top: 2em;
+            padding-bottom: 2em;
+            .header-left-icons {
+                color: $dash-header-primary;
+                i {
+                    margin-right: 0.6em;
+                }
+            }
+            img {
+                display: inline-block;
+                border: 2px solid $dash-header-imgBorder;
+                -webkit-border-radius: 0.2em;
+                -moz-border-radius: 0.2em;
+                border-radius: 0.2em;
+                width: 47%;
+                margin-left: 0.5%;
+                margin-right: 0.5%;
+                // position: relative;
+            }
+            h2 {
+                font-weight: 300;
+                margin-top: 0;
+            }
         }
     }
 }
