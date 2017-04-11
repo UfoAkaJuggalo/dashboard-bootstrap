@@ -91,6 +91,41 @@ body {
         .header-right {
             padding-top: 2em;
             padding-bottom: 2em;
+            form {
+                width: 100%;
+                text-align: right;
+                input[type=search],
+                input[type=search]:focus {
+                    font-size: 1.5em;
+                    background-color: rgba(0, 0, 0, 0);
+                    border: 0 none;
+                    outline: none;
+                    box-shadow: none;
+                    -webkit-box-shadow: none;
+                    padding: 0px;
+                    margin: 0px;
+                    color: $dash-header-primary;
+                }
+                a {
+                    font-size: 2em;
+                    margin-left: 0.5em;
+                }
+                .dashboard-find {
+                    text-align: right;
+                    background-color: rgba(0, 0, 0, 0);
+                    border: 0 none;
+                    outline: none;
+                    box-shadow: none;
+                    -webkit-box-shadow: none;
+                    color: $dash-header-primary;
+                    padding-right: 0;
+                }
+                .dashboard-logOut {
+                    padding-left: 0.5em;
+                    color: $dash-header-secondary;
+                    border-left: 1px solid $dash-header-primary;
+                }
+            }
         }
         .header-left {
             padding-top: 2em;

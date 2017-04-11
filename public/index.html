@@ -15,9 +15,9 @@
 
 <body>
     <div class="container-fluid">
-        <header class="row">
+        <header class="row row-flex row-flex-wrap">
             <div class="col-xs-12 col-sm-6 col-md-4 header-left">
-                <div class="row row-flex row-flex-wrap vcenterContainer">
+                <div class="row row-flex vcenterContainer">
                     <div class="col-xs-6 vcenter">
                         <div class="panel panel-default flex-col vcenterContainer">
                             <div class="panel-body vcenter">
@@ -39,9 +39,19 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-md-push-4 header-right">
-                <h1>prawo</h1>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-md-push-4 header-right vcenterContainer">
+                <form class="vcenter">
+                    <input type="search" value="" name="search">
+                    <a class="btn btn-link dashboard-find" type="submit">
+                        <i class="fa fa-search fa-lg"></i>
+                    </a>
+                    <a class="btn btn-link dashboard-logOut">
+                        <i class="fa fa-power-off fa-lg"></i>
+                    </a>
+                </form>
+
             </div>
+
             <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-pull-4 col-md-offset-0" style="background-color: green;">
                 <h1>menu</h1>
             </div>
