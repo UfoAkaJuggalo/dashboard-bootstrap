@@ -20,14 +20,10 @@ $font-family-base: $dash-fontfamily-normal;
 
 // Bootstrap Starter Template Styles
 body {
-    .vcenterContainer {
+    .vcenter {
         display: flex;
-        flex-direction: row;
-        .vcenter {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+        align-items: center;
+        justify-content: center;
     }
     .row-flex,
     .row-flex>div[class*='col-'] {
@@ -64,6 +60,14 @@ body {
         -webkit-flex: 2;
         flex: 2;
     }
+    // ciach!
+    .row.display-flex {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .row.display-flex>[class*='col-'] {
+        flex-grow: 1;
+    }
     background-color: $dash-main-background;
     i {
         position: relative;
@@ -89,6 +93,40 @@ body {
         color: $dash-header-primary;
         padding-top: 0;
         padding-bottom: 0;
+        .header-menu {
+            text-align: center;
+            .row {
+                height: 100%;
+                .header-menu-active {
+                    background-color: $dash-header-menuActive;
+                    &::after {
+                        background-color: $dash-header-menuActive;
+                        font-size: 1.5em;
+                        content: "";
+                        width: 1em;
+                        height: 1em;
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        transform: translate(-50%, 50%);
+                        -webkit-border-radius: 0.5em;
+                        -moz-border-radius: 0.5em;
+                        border-radius: 0.5em;
+                    }
+                }
+                .header-menu-item {
+                    height: 100%;
+                    text-align: center;
+                    font-size: 1.25em;
+                    text-transform: uppercase;
+                    font-weight: 300;
+                    div {
+                        display: block;
+                    }
+                    // min-height: 10em;
+                }
+            }
+        }
         .header-right {
             padding-top: 2em;
             padding-bottom: 2em;
@@ -98,6 +136,7 @@ body {
                 input[type=search],
                 input[type=search]:focus {
                     font-size: 1.5em;
+                    text-align: right;
                     background-color: rgba(0, 0, 0, 0);
                     border: 0 none;
                     outline: none;
