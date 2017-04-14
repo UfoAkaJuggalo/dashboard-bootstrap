@@ -1,0 +1,20 @@
+{
+    "name": "dashboard-bootstrap",
+    "version": "0.0.0",
+    "homepage": "https://github.com/UfoAkaJuggalo/dashboard-bootstrap",
+    "authors": [
+        "Michał Nawrocki <v25@vault25.net>"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "bootstrap-sass-official": "~3.3.3",
+        "fontawesome": "~4.3.0"
+    }
+}
