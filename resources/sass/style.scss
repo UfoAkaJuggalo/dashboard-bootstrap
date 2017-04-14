@@ -18,6 +18,10 @@ $font-family-base: $dash-fontfamily-normal;
     box-shadow: 0 0px 0px transparent;
 }
 
+.btn {
+    border: 0;
+}
+
 // Bootstrap Starter Template Styles
 body {
     .vcenter {
@@ -216,5 +220,59 @@ body {
                 margin-top: 0;
             }
         }
+    }
+    .dashboard-main {
+        margin-top: 2em;
+        font-family: $dash-fontfamily-normal;
+        h1 {
+            font-size: 2.8em;
+            font-weight: 300;
+            text-align: left;
+            margin: 0;
+        }
+        img {
+            max-width: 100%;
+        }
+        .dashboard-btn-right {
+            p {
+                font-size: 1em;
+                font-weight: 400;
+            }
+            button {
+                margin-left: 0.5em;
+            }
+        }
+        .dashboard-main-head2 {
+            margin-top: 0.2em;
+            margin-bottom: 0.5em;
+            font-family: $dash-fontfamily-condensed;
+            font-size: 1.8em;
+            text-align: left;
+            font-weight: 400;
+            p {
+                line-height: 1.2em;
+            }
+        }
+        .dashboard-main-switch {
+            p {
+                font-size: 0.6em;
+                margin-right: 0.5em;
+            }
+            .btn {
+                color: $dash-main-text1;
+                border: 0.2em solid $dash-main-primary;
+            }
+        }
+    }
+}
+
+.dashboard-align-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    // text-align: right;
+    &>p {
+        margin-bottom: 0;
+        margin-top: 0;
     }
 }
