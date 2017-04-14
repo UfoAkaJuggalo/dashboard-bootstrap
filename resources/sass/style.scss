@@ -13,6 +13,14 @@ $font-family-base: $dash-fontfamily-normal;
 @import "bootover";
 @import "bootstrap";
 @import "font-awesome";
+//mixim time
+@mixin dash-border-radius() {
+    -webkit-border-radius: 0.25em;
+    -moz-border-radius: 0.25em;
+    -ms-border-radius: 0.25em;
+    border-radius: 0.25em;
+}
+
 //Override
 .panel {
     box-shadow: 0 0px 0px transparent;
@@ -28,6 +36,11 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    .vcenter-left {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
     }
     .row-flex,
     .row-flex>div[class*='col-'] {
@@ -232,6 +245,109 @@ body {
         }
         img {
             max-width: 100%;
+        }
+        .dashboard-main-bottom {
+            margin-top: 1em;
+            margin-bottom: 1em;
+            .dashboard-main-apla {
+                @include dash-border-radius();
+                background-color: $dash-main-primary;
+                padding: 1.5em;
+                margin: 0 0em 1em 0;
+                font-size: 1.2em;
+                .fa-inverse {
+                    color: $dash-main-primary;
+                    font-size: 1.25em;
+                }
+                .fa-badge {
+                    position: relative;
+                    span {
+                        color: $dash-main-primary;
+                        position: absolute;
+                        top: -25%;
+                        right: -25%;
+                        background-color: $dash-header-secondary;
+                        font-size: 0.75em;
+                        line-height: 1em;
+                        padding: 0.3em 0.3em;
+                        font-style: normal;
+                        font-weight: bold;
+                        width: 1.6em;
+                        height: 1.6em;
+                        -webkit-border-radius: 50%;
+                        -moz-border-radius: 50%;
+                        border-radius: 50%;
+                        text-align: center;
+                    }
+                }
+                i {
+                    text-align: center;
+                    font-size: 2.2em;
+                    color: $dash-main-icon;
+                    span {
+                        color: $dash-main-primary;
+                        font-size: 0.5em;
+                        padding: 0.15em 0.15em;
+                        width: 1.5em;
+                        height: 1.5em;
+                    }
+                }
+                p {
+                    margin: 0;
+                }
+            }
+            .dashboard-main-apla-active {
+                background-color: $dash-main-secondary;
+                i {
+                    color: $dash-main-iconActive;
+                }
+            }
+            .dashboard-main-history {
+                @include dash-border-radius();
+                background-color: $dash-main-primary;
+                font-size: 1.25em;
+                font-weight: 500;
+                margin: 0;
+                p {
+                    margin: 0;
+                }
+                .row {
+                    font-family: $dash-fontfamily-condensed;
+                    padding: 0.6em 0;
+                    border-bottom: 2px solid $dash-main-background;
+                    div:nth-child(1) {
+                        text-align: center;
+                        padding-left: 0.9375rem;
+                        padding-right: 0;
+                        font-size: 1.1em;
+                    }
+                    div:nth-child(2) {
+                        display: inline;
+                        p {
+                            display: inline;
+                        }
+                        i {
+                            color: $dash-main-secondary;
+                        }
+                        .dashboard-main-invert {
+                            color: $dash-main-primary;
+                            background-color: $dash-main-secondary;
+                            padding: 0.1em 0.5em;
+                            font-family: $dash-fontfamily-normal;
+                            margin: 0 0.5em;
+                        }
+                    }
+                    div:nth-child(3) {
+                        font-size: 1.1em;
+                        text-align: center;
+                        padding-right: 0.9375rem;
+                        padding-left: 0;
+                        .dashboard-main-green {
+                            color: $dash-main-text2;
+                        }
+                    }
+                }
+            }
         }
         .dashboard-btn-right {
             p {
